@@ -1,10 +1,13 @@
-import React, { Component } from 'react'
+import React, { Component, useContext } from 'react';
+import {CartContext} from "../Context";
+
+const value = useContext(CartContext);
 
 export default class Error extends Component {
     render() {
         return (
             <div>
-                <p>Error</p>
+                <p>{value}</p>
             </div>
         )
     }
