@@ -1,14 +1,22 @@
-import React, { Component, useContext } from 'react';
-import {CartContext} from "../Context";
+import React, { Component } from 'react';
+import Hero from '../components/Hero';
+import Banner from "../components/Banner";
+import {Link} from 'react-router-dom';
 
-const value = useContext(CartContext);
-
-export default class Error extends Component {
+class Error extends Component {
     render() {
         return (
             <div>
-                <p>{value}</p>
+                <Hero hero="seprateHero"> 
+                    <Banner title="No Such Page Found">                         
+                        <Link to="/home" className="btn-primary">
+                            Home
+                        </Link>
+                    </Banner>
+                </Hero>
             </div>
         )
     }
 }
+
+export default Error;
